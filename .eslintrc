@@ -1,42 +1,44 @@
 {
-  "extends": ["eslint:recommended", "prettier", "plugin:jsx-a11y/recommended"],
+  "extends": ["eslint:recommended", "prettier"],
   "parser": "@babel/eslint-parser",
+  "requireConfigFile": false,
+  /* "requireConfigFile": false, */
+  "plugins": ["prettier"],
   "parserOptions": {
-    "ecmaVersion": 8,
-    "requireConfigFile": false
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "env": {
-    "browser": true,
-    "node": true,
     "es6": true,
-    "jest": true
+    "node": true
+  },
+  "globals": {
+    "localStorage": true,
+    "ga": true,
+    "fetch": true,
+    "window": true,
+    "document": true,
+    "Raven": true,
+    "ENV": true
   },
   "rules": {
-    "react/react-in-jsx-scope": 0,
-    "react-hooks/rules-of-hooks": "error",
+    "prettier/prettier": "off",
+    /*  "prettier/prettier": ["error", { "trailingComma": "es5" }], */
     "no-console": 0,
-    "react/state-in-constructor": 0,
-    "indent": 0,
-    "linebreak-style": 0,
-    "react/prop-types": 0,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "react/jsx-filename-extension": [
+    "react/sort-comp": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "order": [
+          "type-annotations",
+          "static-methods",
+          "lifecycle",
+          "everything-else",
+          "render"
+        ]
       }
     ]
-    /*  "prettier/prettier": [
-      "error",
-      {
-           "trailingComma": "es5", 
-           "singleQuote": true,
-        "printWidth": 100,
-        "tabWidth": 4,
-        "semi": true,
-        "endOfLine": "auto" 
-      }
-    ] */
-  },
-  "plugins": ["react", "react-hooks"]
+  }
 }

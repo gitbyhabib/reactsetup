@@ -1,8 +1,16 @@
-{
-  // Theme
-  "workbench.colorTheme": "Default Dark+",
+/*
+ * Title: VS Code workspace settings
+ * Description: Workspace settings shown in Learn with Sumit React Tutorial Series which assumes you have 1) VS Code Dracula Theme Installed, VS Code ESLint and Prettier Plugins installed and you follow all the steps mentioned in the 3rd Video of this playlist - https://www.youtube.com/playlist?list=PLHiZ4m8vCp9M6HVQv7a36cp8LKzyHIePr
+ * Author: Sumit Saha ( Learn with Sumit )
+ * Date: 02/15/2021
+ *
+ */
 
+{
   // config related to code formatting
+  "editor.fontSize": 16,
+  "editor.fontFamily": "OperatorMonoLig-Book, OperatorMonoLig-Light",
+  "editor.hover.enabled": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "[javascript]": {
@@ -24,5 +32,7 @@
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  }
+  },
+  "terminal.integrated.fontFamily": "OperatorMonoLig-Book, Hack Nerd Font, Meslo LG L DZ for Powerline",
+  "terminal.integrated.fontSize": 16
 }
