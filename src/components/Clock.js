@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from './Button';
+
 /* function Clock({locale}) {
  return (
   <h1 className='heading' tabIndex={index}>
@@ -24,27 +26,43 @@ function App() {
 class Clock extends React.Component {
     constructor(props){
         super(props);
-        this.state = {date:new Date()};
-
+      this.state = { date: new Date(), locale: 'bn-BD' };
+     /*  this.handleClick = this.handleClick.bind(this); */
     }
     componentDidMount(){
         this.clocktimer =  setInterval(()=>this.tick(),1000)
     }
     componentWillUnmount(){
         clearInterval(this.clocktimer);
-
     }
     tick(){
         this.setState({
             date:new Date()
         });
-    }
-  render (){
+  }
+  
+  handleClick= (locale)=> {
+   /*  e.preventDefault(); */
+    console.log('the button was clicked')
+    this.setState({
+     /*  locale:'en-US' */
+      locale
+    })
+  }
+  render() {
+    
+
+    console.log('component render')
+    const { date,locale } = this.state;
     return (
-      <h1 className='heading'>
-        <span className='text'>Hello  {this.state.date.toLocaleTimeString(this.props.locale)} </span>
+      <div>
+        <h1 className='heading'>
+        <span className='text'>Hello  {date.toLocaleTimeString(locale)} </span>
         <img src="" alt="" />
       </h1>
+      <Button  change={this.handleClick} locale="en-US" >Click here</Button>
+      </div>
+
     );
   }
 }
