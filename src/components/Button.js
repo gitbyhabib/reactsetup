@@ -13,17 +13,16 @@ class Button extends Component {
         else return true;
     }
     render() {
-
+        const { change, locale, show, enable } = this.props
         
-
-        console.log('button render')
-        const {change,locale}=this.props
+        if (!enable) return null;
         return (
             <div>
-                 <button type='button' onClick={()=>change(locale)}>Click here</button>
+                <button className='btn btn-danger' type='button' onClick={() => change(locale)}>
+                    {locale === 'bn-BD' ? 'Change clock' : 'Ghori poriborton korun'}</button>
+               {show && <p>Lorem ipsum dolor isquam deleniti praesentium omnis?</p>}
             </div>
         );
     }
 }
-
 export default Button;

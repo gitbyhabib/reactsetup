@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from './Button';
-
 /* function Clock({locale}) {
  return (
   <h1 className='heading' tabIndex={index}>
@@ -9,11 +8,9 @@ import Button from './Button';
   </h1>
 )
 }
-
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
-
 function App() {
   return (
     <div>
@@ -40,7 +37,6 @@ class Clock extends React.Component {
             date:new Date()
         });
   }
-  
   handleClick= (locale)=> {
    /*  e.preventDefault(); */
     console.log('the button was clicked')
@@ -50,17 +46,26 @@ class Clock extends React.Component {
     })
   }
   render() {
-    
 
-    console.log('component render')
-    const { date,locale } = this.state;
+    const { date, locale } = this.state;
+  /*   let button;
+    if (locale === 'bn-BD') {
+        button = (<Button change={this.handleClick} locale="en-US" >Toggle here</Button>);
+    }
+    else if(locale === 'en-US') {
+      button = (<Button change={this.handleClick} locale="en-UK" >Toggle here</Button>);
+    }
+    else {
+      button=(<Button change={this.handleClick} locale="bn-BD" >Toggle here</Button>);
+    } */
     return (
       <div>
         <h1 className='heading'>
-        <span className='text'>Hello  {date.toLocaleTimeString(locale)} </span>
-        <img src="" alt="" />
-      </h1>
-      <Button  change={this.handleClick} locale="en-US" >Click here</Button>
+        <span className='text'>Hello  {date.toLocaleTimeString(locale)} </span>     
+        </h1>
+
+        {locale === 'bn-BD' ? <Button change={this.handleClick} locale="en-US" show={false} enable ={false} >Toggle here</Button> :
+        <Button change={this.handleClick} locale="bn-BD" show enable />}
       </div>
 
     );
