@@ -67,8 +67,8 @@ class Form extends Component {
 
                 <input type="Submit" value='Submit' className='btn btn-danger' />
 
-           {/*      <p>{title}</p> */}
-                {/* <p>{selectval}</p> */}
+                <p>{title}</p>
+                <p>{selectval}</p>
             
             </form>
         );
