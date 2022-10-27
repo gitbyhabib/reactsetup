@@ -1,11 +1,10 @@
-import Clock from "./components/Clock";
-function App() {
+import Calculator from "./components/Calculator";
 
+function App() {
+  
   console.log('app rended')
   return (
-    <div>
-      <Clock locale="bn-BD"/>
-    </div>
+   <Calculator/>
   );
 }
 
