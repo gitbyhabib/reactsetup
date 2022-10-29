@@ -1,10 +1,16 @@
-import Calculator from "./components/Calculator";
-
+import Bracket from './components/composition/Bracket';
+import Emoji from "./components/composition/Emoji";
+import Text from "./components/composition/Text";
 function App() {
   
   console.log('app rended')
   return (
-   <Calculator/>
+    <Emoji>
+      {({ addEmoji }) => (
+        <Bracket>
+          { ({addBracket}) => <Text addEmoji={addEmoji} addBracket={addBracket}/>
+          }</Bracket>)}
+    </Emoji>
   );
 }
 
